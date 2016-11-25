@@ -4,16 +4,17 @@ import java.awt.Color;
 import asd.proj.Constant;
 
 
-class Case{
+class Classe{
 
+	private int _id;
+	private static int _cnt = 0;
 	private Color _color;
-	private ClassUnion _union;
-	private boolean _star;
+	private int _nbStars;
 
-	public Cellule(){
+	public Classe(){
 		_color= Color.WHITE;
-		_union = new Classe(Constant.id);
 		_star=false;
+		_id = ++_cnt;
 	}
 
 	public Color getColor(){
@@ -33,6 +34,14 @@ class Case{
 	}
 	public void setStar(boolean star){
 		_star = star;
+	}
+
+	public int classe(){
+
+	}
+
+	public void union(){
+
 	}
 
 }

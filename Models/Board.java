@@ -15,14 +15,14 @@ class Board{
 		Random rand= new Random();
 		int randx= nextInt(length);
 		int randy= nextInt(length);
-		_grid = new Case[length][length];
+		_grid = new Classe[length][length];
 
-		for(Case tile : _grid)
-			tile = new Case();
+		for(Classe tile : _grid)
+			tile = new Classe();
 
 		for(int i=0; i<nbStar; ++i){
 			//Player 1 Star
-			_grid[randx][randy].setStar(true);
+			//_grid[randx][randy].setStar(true); // ajouter la 
 			_grid[randx][randy].setColor(Color.BLUE);
 			while(_grid[randx][randy].getStar()){
 				randx= nextInt(length);
@@ -66,9 +66,9 @@ class Board{
 		return possibility;
 	}
 
-	public boolean existPathCases(Case case1, Case case2, Color color)
+	public boolean existPathCases(int x1, int y1, int x2, int y2, Color color)
 	{
-		return (case1.getColor == color) && (case1.getClass() == case2.getClass());
+		return (_grid[x1][y1].getColor == color) && (_grid[x1][y1].getClass() == _grid[x2][y2].getClass());
 	}
 
 	public int linkFreeCase(int x1, int y1, int x2, int y2, Case cas1, Case case2)
