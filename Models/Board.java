@@ -63,6 +63,42 @@ class Board{
 					possibility.add(_grid[i][j].getClass());
 			}
 		}
+		return possibility;
+	}
+
+	public boolean existPathCases(Case case1, Case case2, Color color)
+	{
+		return (case1.getColor == color) && (case1.getClass() == case2.getClass());
+	}
+
+	public int linkFreeCase(int x1, int y1, int x2, int y2, Case cas1, Case case2)
+	{
+		if(_grid[x1][y1].getColor() == _grid[x2][y2].getColor())
+		{
+			countRec(x1,y1,x2,y2,_grid[x1][y1].getColor());
+		}
+	}
+
+	private int countRec(int x1, int y1, int x2, int y2, Color color)
+	{
+		if(x1==x2 && y1==y2)
+		{
+			return 0;
+		}
+		else
+		{
+			if(x2-x1>0)
+			{
+				++x2;
+			}
+			else
+			{
+				--x2;
+			}
+
+			if(y2-y1>0)
+				y2++;
+		}
 	}
 
 }
