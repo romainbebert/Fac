@@ -1,4 +1,3 @@
-
 class Constante{
 	
 	public static final int nbStar = 5;
@@ -6,5 +5,6 @@ class Constante{
 	public static final int CASESIZE = 32;
 	public static final int WIDTH = ;
 	public static final int HEIGHT = ;
+	public static final Color COLOR_P1 = 
 	
 }
